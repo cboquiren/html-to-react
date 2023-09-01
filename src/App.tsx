@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <Header />
-    <Table info={data}/>
+    <Table characters={data}/>
     <Cards info={data}/>
     </>
   )

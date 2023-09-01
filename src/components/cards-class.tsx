@@ -3,7 +3,7 @@ import '../css/character-cards.css'
 import { Character } from '../assets/data';
 
 
-export class Cards extends React.Component {
+export class Cards extends React.Component<{info: Character[]}> {
   render(){
     return(
       <section id='character-cards'>

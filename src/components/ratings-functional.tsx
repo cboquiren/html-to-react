@@ -2,8 +2,8 @@ import { Character } from '../assets/data';
 import '../css/character-ratings.css'
 
 
-function CreateTop5 ({order}) {
-  const Top = order.slice(0, 5);
+function CharacterRows (props: {order: Character[]}) {
+  const Top = props.order.slice(0, 5);
   return(
     Top.map((character: Character, index: number) => {
       return(
@@ -17,8 +17,8 @@ function CreateTop5 ({order}) {
   )
 }
 
-export function Table (info) {
-  const VoteOrder = Array.from(info.info).sort((a, b) => b.votes - a.votes);
+export function Table (props: {characters: Character[]}) {
+  const VoteOrder = Array.from(props.characters).sort((a, b) => b.votes - a.votes);
   return (
     <section id='character-ratings'>
       <h4>Top Characters</h4>
@@ -28,7 +28,7 @@ export function Table (info) {
           <th>Skillset</th>
           <th>Votes</th>
         </tr>
-        <CreateTop5 order={VoteOrder} />
+        <CharacterRows order={VoteOrder} />
       </table>
     </section>
   )
